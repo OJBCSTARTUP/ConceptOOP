@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "BankAccount.h"
 @interface ViewController ()
 
 @end
@@ -16,13 +16,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    BankAccount *account1 = [[BankAccount alloc]init];
+    [account1 displayAccountInfo];
+    
+    [account1 setAccountNumber:223323];
+    [account1 setAccountBalance:3000.0];
+    [account1 setAccount:2 andBalance:2000.00];
+    NSLog(@"AccountNumber: = %li Ballance = %0.2f",[account1 getAccountNumber],[account1 getAccountBalance]);
+    
 }
 
 
