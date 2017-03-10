@@ -34,4 +34,18 @@
 {
     NSLog(@"Accont Number %li has a balance of %f",accountNumber,accountBalance);
 }
+
+//call static method
+static int openAccount = 0;
++(BankAccount *) newAlloc
+{
+    openAccount++;
+    return [BankAccount alloc];
+}
++(int) totalOpen
+{
+    return openAccount;
+}
+
+
 @end

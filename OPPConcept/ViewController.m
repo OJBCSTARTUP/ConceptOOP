@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "BankAccount.h"
+#import "SavingAccount.h"
 @interface ViewController ()
 
 @end
@@ -16,13 +17,24 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    BankAccount *account1 = [[BankAccount alloc]init];
-    [account1 displayAccountInfo];
+    BankAccount *account1 = [[BankAccount newAlloc]init];
+    BankAccount *account2 = [[BankAccount newAlloc]init];
     
-    [account1 setAccountNumber:223323];
-    [account1 setAccountBalance:3000.0];
-    [account1 setAccount:2 andBalance:2000.00];
-    NSLog(@"AccountNumber: = %li Ballance = %0.2f",[account1 getAccountNumber],[account1 getAccountBalance]);
+    SavingAccount *account3 = [[SavingAccount alloc]init];
+    [account3 setAccount:3 andBalance:3000.0];
+    [account3 setInterestRate:0.001];
+    float interestEarned = [account3 calculateInterest];
+    NSLog(@"Interest earned = %0.2f",interestEarned);
+    [account3 displaySavingAccount];
+    
+    int count = [BankAccount totalOpen];
+    NSLog(@"Number of bank account:%i",count);
+    
+    [account1 displayAccountInfo];
+    [account1 setAccount:1 andBalance:2000.00];
+    NSLog(@"AccountNumber: = %li Ballance = %0.2f",[account1 getAccountNumber],[account1 getAccountBalance],[account3 getAccountBalance]);
+    
+   
     
 }
 

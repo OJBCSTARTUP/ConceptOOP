@@ -14,6 +14,10 @@
     double accountBalance;
     long accountNumber;
 }
+//public variable
+@property double accountBalance;
+@property long accountNumber;
+
 //public method
 -(void) setAccount:(long) y andBalance: (double) x;
 -(void) setAccountBalance:(double) x;
@@ -21,4 +25,9 @@
 -(void) setAccountNumber:(long) y;
 -(long) getAccountNumber;
 -(void) displayAccountInfo;
+
+//static method
++(BankAccount *) newAlloc;
++(int) totalOpen;
+
 @end
